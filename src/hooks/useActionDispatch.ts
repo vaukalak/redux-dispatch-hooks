@@ -16,7 +16,7 @@ export const useActionDispatch = <Args extends any[]>(
     dispatch(
       isFunction(actionOrCreator)
         ? (actionOrCreator as ActionCreator<Args>)(...args)
-        : actionOrCreator
+        : actionOrCreator as Action
     );
   })
 }
