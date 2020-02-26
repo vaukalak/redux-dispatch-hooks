@@ -20,7 +20,7 @@ type CreateReturnMap<ActionsMap> = {
     : () => void
 };
 
-export const useActionsDispatch = <
+export const useDispatchMap = <
   ActionsMap extends { [key in K]: ActionOrCreator },
   K extends keyof ActionsMap,
   ReturnMap = CreateReturnMap<ActionsMap>

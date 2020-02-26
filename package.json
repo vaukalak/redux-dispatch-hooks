@@ -1,6 +1,6 @@
 {
   "name": "redux-dispatch-hooks",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "shortcut hooks for creating redux actions",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
