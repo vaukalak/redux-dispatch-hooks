@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { ReduxDispatchContext } from '../context/Context';
-import { Action, Store } from '../types';
+import { Store } from '../types';
 
 interface Props {
   store: Store;

@@ -11,10 +11,12 @@ try{
 }
 
 export const useDispatch = () => {
-  const { store }: { store: Store } = useContext(ReduxDispatchContext) || {} as any;
-  const reactReduxContext = reactReduxUseStore ? reactReduxUseStore() : undefined;
-  if (!(store || reactReduxContext)) {
-    throw new Error('no context value provided');
+  const reduxDispatchContext: { store: Store } = useContext(ReduxDispatchContext) || {} as any;
+  if (reduxDispatchContext.store) {
+    return reduxDispatchContext.store.dispatch;
   }
-  return (store || reactReduxContext).dispatch;
+  if (!reactReduxUseStore) {
+    throw new Error('Please use `useDispatch` in components inside redux-dispatch-hooks or react-redux.');
+  }
+  return reactReduxUseStore().dispatch;
 }
