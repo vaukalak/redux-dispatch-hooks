@@ -50,8 +50,8 @@ const Comment = ({
 
 const CommentContainer = () => {
   const dispatchMap = useDispatchMap({
-    onRemove
-    onShare
+    onRemove: actions.onRemove,
+    onShare: actions.onShare,
   });
   return (
     <Comment
